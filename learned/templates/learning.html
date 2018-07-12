@@ -2,6 +2,8 @@
 
 {% block main %}
 
-{{ learning.learning_text }}
+{% load md2 %}
+
+{{ learning.learning_text | markdown }}
 
 {% endblock %}

@@ -1,3 +1,4 @@
 from django.db import models
 
-# Create your models here.
+class Learning(models.Model):
+    learning_text = models.TextField(max_length=3000)

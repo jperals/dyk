@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>Learnings</h1>
+
+<ul>
+    {% for learning in learnings %}
+    <li class="learning">
+        <a href="learning/{{ learning.id }}">
+            {{ learning.learning_text }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

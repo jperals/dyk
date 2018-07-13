@@ -5,7 +5,8 @@ from .models import Learning
 def index(request):
     learnings = Learning.objects.all()
     context = {
-        'learnings': learnings
+        'learnings': learnings,
+        'meta': Learning._meta
     }
     return render(request, 'learnings.html', context)
 

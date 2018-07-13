@@ -12,6 +12,7 @@ def index(request):
 def learning(request, id):
     learning = Learning.objects.get(pk=id)
     context = {
-        'learning': learning
+        'learning': learning,
+        'meta': learning._meta
     }
     return render(request, 'learning.html', context)

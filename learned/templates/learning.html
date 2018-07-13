@@ -2,6 +2,8 @@
 
 {% block main %}
 
+{% include "edit_button.html" with item=learning meta=meta %}
+
 {% load md2 %}
 
 {{ learning.learning_text | markdown }}

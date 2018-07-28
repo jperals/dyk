@@ -2,13 +2,16 @@
 
 {% block main %}
 
-{% include "edit_button.html" with item=learning meta=meta %}
+{% include "header.html" %}
+
 
 {% load md2 %}
 
 {% if learning.learning_title %}
 <h1>{{ learning.learning_title | markdown }}</h1>
 {% endif %}
+
+{% include "edit_button.html" with item=learning meta=meta %}
 
 <section class="main-content-text markdown">
 {{ learning.learning_text | markdown:"fenced-code-blocks" }}

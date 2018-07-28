@@ -8,6 +8,9 @@ django = "*"
 django-heroku = "*"
 gunicorn = "*"
 "django-markdown2" = "*"
+libsass = "*"
+django-compressor = "*"
+django-sass-processor = "*"
 
 [dev-packages]
 

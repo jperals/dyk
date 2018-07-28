@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'learned.apps.LearnedConfig',
+    'sass_processor',
     'django_markdown2',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,3 +127,9 @@ STATIC_URL = '/static/'
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]

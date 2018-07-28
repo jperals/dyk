@@ -5,6 +5,16 @@ from django.utils import timezone
 maxShortTitleLength = 50
 
 
+class Tag(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ('name',)
+
+
 class Learning(models.Model):
     learning_title = models.CharField(
         blank=True,
@@ -14,6 +24,8 @@ class Learning(models.Model):
 
     created_date = models.DateTimeField(blank=True)
     modified_date = models.DateTimeField(editable=False)
+
+    tags = models.ManyToManyField(Tag)
 
     def __str__(self):
         # If the learning has a title, use it as excerpt in lists.

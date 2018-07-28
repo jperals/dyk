@@ -1,5 +1,5 @@
-{% load admin_urls %}
 {% if perms.app_label.can_edit %}
+{% load admin_urls %}
 <a class="btn btn-default btn-small btn-edit" href="{% url meta|admin_urlname:'change' item.id %}">
     <span class="sr-only">Edit</span>
     <i class="icon icon-solid icon-edit" aria-hidden="true"></i>

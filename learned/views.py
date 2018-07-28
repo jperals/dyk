@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Learning
 
 def index(request):
-    learnings = Learning.objects.all()
+    learnings = Learning.objects.order_by('-created_date')
     context = {
         'learnings': learnings,
         'meta': Learning._meta

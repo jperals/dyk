@@ -11,7 +11,7 @@
 {% endif %}
 
 <section class="main-content-text markdown">
-{{ learning.learning_text | markdown }}
+{{ learning.learning_text | markdown:"fenced-code-blocks" }}
 </section>
 
 {% endblock %}

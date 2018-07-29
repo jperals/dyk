@@ -2,7 +2,7 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils import timezone
 
-maxShortTitleLength = 50
+maxShortTitleLength = 80
 
 
 class Tag(models.Model):

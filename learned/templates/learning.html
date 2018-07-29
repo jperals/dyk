@@ -4,17 +4,27 @@
 
 {% include "header.html" %}
 
-
 {% load md2 %}
 
-{% if learning.learning_title %}
-<h1>{{ learning.learning_title | markdown }}</h1>
-{% endif %}
+<section class="main learning">
+    {% if learning.learning_title %}
+    <h1>{{ learning.learning_title | markdown }}</h1>
+    {% endif %}
 
-{% include "edit_button.html" with item=learning meta=meta %}
+    <div class="dates">
+        <div class="date">
+            Created: {{ learning.created_date }}
+        </div>
+        {% if learning.created_date != learning.modified_date %}
+        <div class="date">
+            Modified: {{ learning.modified_date }}
+        </div>
+        {% endif %}
+    </div>
 
-<section class="main-content-text markdown">
-{{ learning.learning_text | markdown:"fenced-code-blocks" }}
+    {% include "edit_button.html" with item=learning meta=meta %}
+
+    {{ learning.learning_text | markdown:"fenced-code-blocks" }}
 </section>
 
 {% endblock %}

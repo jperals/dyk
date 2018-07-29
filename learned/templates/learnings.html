@@ -4,16 +4,18 @@
 
 {% include "header.html" %}
 
-<ul>
-    {% for learning in learnings %}
-    <li class="learning">
-        <a href="learning/{{ learning.id }}">
-            {{ learning }}
-        </a>
-    </li>
-    {% endfor %}
-</ul>
-
-{% include "add_button.html" with meta=meta %}
+<section class="main">
+    <ul class="list learnings-list">
+        {% for learning in learnings %}
+        <li class="learning">
+            <div class="date learning-date">{{ learning.created_date }}</div>
+            <a href="learning/{{ learning.id }}">
+                {{ learning }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% include "add_button.html" with meta=meta %}
+</section>
 
 {% endblock %}

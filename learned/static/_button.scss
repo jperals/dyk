@@ -1,0 +1,19 @@
+@import './colors';
+
+.btn-edit {
+    border: 1px solid $color-very-low-contrast;
+    border-radius: 5px;
+    padding: .5em;
+}
+
+.btn-edit,
+a.btn-edit,
+a.btn-edit:link {
+    color: $color-low-contrast;
+    &:hover {
+        background-color: $color-very-low-contrast;
+        border-color: $color-low-contrast;
+        color: $color-background;
+        text-decoration: none;
+    }
+}

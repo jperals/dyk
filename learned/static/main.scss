@@ -1,13 +1,56 @@
+@import './button';
 @import './code';
+@import './colors';
 @import './fonts';
 
+body {
+    background-color: $color-background;
+    color: $color-high-contrast;
+}
+
+body {
+    margin: 0;
+    section {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
 section.header {
+    border-bottom: 1px solid $color-very-low-contrast;
+    margin-bottom: 1em;
     a,
     a:link {
-        color: gray;
-        text-decoration: none;
+        color: $color-mid-contrast;
     }
-    a:hover {
-        text-decoration: underline;
+}
+
+section.main {
+    .dates {
+        text-align: right;
     }
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 1.5em;
+        }
+        padding-left: 0;
+        li {
+            font-size: 18px;
+        }
+    }
+}
+
+a,
+a:link {
+    color: $color-high-contrast;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.date {
+    color: $color-low-contrast;
+    font-size: 14px;
 }

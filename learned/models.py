@@ -18,14 +18,20 @@ class Tag(models.Model):
 class Learning(models.Model):
     learning_title = models.CharField(
         blank=True,
-        max_length=3000
+        max_length=3000,
     )
-    learning_text = models.TextField(max_length=3000)
+    learning_text = models.TextField(
+        blank=True,
+        max_length=3000,
+    )
 
     created_date = models.DateTimeField(blank=True)
     modified_date = models.DateTimeField(editable=False)
 
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(
+        Tag,
+        blank=True,
+    )
 
     def __str__(self):
         # If the learning has a title, use it as excerpt in lists.

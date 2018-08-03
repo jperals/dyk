@@ -5,16 +5,27 @@
 {% include "header.html" %}
 
 <section class="main">
+    {% if learnings|length > 0 %}
+    {% load learnings_extras %}
     <ul class="list learnings-list">
-        {% for learning in learnings %}
-        <li class="learning">
-            <div class="date learning-date">{{ learning.created_date }}</div>
-            <a href="learning/{{ learning.id }}">
-                {{ learning }}
-            </a>
+        {% for days_ago, learnings_in_day in learnings.items %}
+        <li>
+            <div class="date learning-date">{{ learnings_in_day|days_since|capfirst }}</div>
+            <ul>
+                {% for learning in learnings_in_day.learnings %}
+                <li class="learning">
+                    <a href="learning/{{ learning.id }}">
+                        {{ learning }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
         </li>
-        {% endfor %}
     </ul>
+    {% else %}
+    <p>No learnings to show yet.</p>
+    {% endif %}
     {% include "add_button.html" with meta=meta %}
 </section>
 

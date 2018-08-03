@@ -38,6 +38,7 @@ section.main {
         li {
             font-size: 16px;
         }
+        margin-bottom: 3em;
     }
 }
 
@@ -53,4 +54,9 @@ a:hover {
 .date {
     color: $color-low-contrast;
     font-size: 12px;
+}
+
+.learning-date {
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
 }

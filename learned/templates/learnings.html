@@ -10,7 +10,7 @@
     <ul class="list learnings-list">
         {% for days_ago, learnings_in_day in learnings.items %}
         <li>
-            <div class="date learning-date">{{ learnings_in_day|days_since|capfirst }}</div>
+            <div class="date learning-date" title="{{ learnings_in_day.date }}">{{ learnings_in_day|days_since|capfirst }}</div>
             <ul>
                 {% for learning in learnings_in_day.learnings %}
                 <li class="learning">

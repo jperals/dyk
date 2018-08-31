@@ -7,13 +7,13 @@
 <section class="main">
     {% if learnings|length > 0 %}
     {% load learnings_extras %}
-    <ul class="list learnings-list">
+    <ul class="timeline list learnings-list">
         {% for days_ago, learnings_in_day in learnings.items %}
-        <li>
+        <li class="timeline-chunk">
             <div class="date learning-date" title="{{ learnings_in_day.date }}">{{ learnings_in_day|days_since|capfirst }}</div>
-            <ul>
+            <ul class="timeline-chunk-items">
                 {% for learning in learnings_in_day.learnings %}
-                <li class="learning">
+                <li class="timeline-item learning">
                     <a href="learning/{{ learning.id }}">
                         {{ learning }}
                     </a>

@@ -1,6 +1,14 @@
+// Inline code as well as fenced code blocks
 code {
+    background-color: rgba(127, 127, 127, .15);
+    border-radius: 3px;
+}
+
+// Code blocks
+pre code {
     background-color: rgba(127, 127, 127, .1);
     border: 1px solid rgba(127, 127, 127, .2);
+    border-radius: 4px;
     display: block;
     overflow-x: auto;
     padding: .5em 1em;

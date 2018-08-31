@@ -1,2 +1,2 @@
 release: python manage.py migrate --noinput
-web: gunicorn til.wsgi
+web: gunicorn dyk.wsgi

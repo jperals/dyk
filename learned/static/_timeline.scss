@@ -5,7 +5,7 @@
     line-height: 1.5;
 }
 
-@media (max-width: $breakpoint_wide - 1px) {
+@media (max-width: $breakpoint_wide) {
   .timeline-chunk {
     .date {
         margin-bottom: 1.5em;
@@ -17,7 +17,7 @@
   }
 }
 
-@media (min-width: $breakpoint_wide) {
+@media (min-width: $breakpoint_wide + 1px) {
   $date_column_width: 80px;
   $date_margin_right: 20px;
   .timeline-chunk {

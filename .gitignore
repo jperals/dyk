@@ -2,3 +2,4 @@
 /staticfiles
 /.venv/
 /.vscode/
+__pycache__/

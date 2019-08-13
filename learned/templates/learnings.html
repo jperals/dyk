@@ -4,6 +4,8 @@
 
 {% include "header.html" %}
 
+{% load md2 %}
+
 <section class="main">
     {% if learnings|length > 0 %}
     {% load learnings_extras %}
@@ -15,7 +17,7 @@
                 {% for learning in learnings_in_day.learnings %}
                 <li class="timeline-item learning">
                     <a href="learning/{{ learning.id }}">
-                        {{ learning }}
+                        {{ learning.learning_title | markdown:"fenced-code-blocks" }}
                     </a>
                 </li>
                 {% endfor %}

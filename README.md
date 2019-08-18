@@ -6,17 +6,30 @@ You can currently see it in action at [https://nerdlog.herokuapp.com](https://ne
 
 ## Requirements
 
-- [Pipenv](https://pipenv.readthedocs.io/en/latest/)
+- Python 3.6.8+
+- Virtualenv
 
 ## Setup
 
-After installing all dependencies with Pipenv, start the virtual environment with
+Initialize a virtual environment:
 
 ```bash
-pipenv shell
+python3 -m venv .venv
 ```
 
-and start a development instance with
+Activate it before starting the server:
+
+```bash
+source .venv/bin/activate
+```
+
+Install the dependencies the first time:
+
+```bash
+pip install -r requirements.txt
+```
+
+And start a development instance with
 
 ```bash
 python manage.py runserver

@@ -3,6 +3,9 @@
 .timeline-chunk-items {
     font-size: 16px;
     line-height: 1.5;
+    li.learning {
+      margin-bottom: 1.5em;
+  }
 }
 
 .timeline-item.draft {
@@ -25,18 +28,19 @@
   $date_column_width: 80px;
   $date_margin_right: 20px;
   .timeline-chunk {
-    font-size: 0; // Remove white space
-    .date,
-    .timeline-chunk-items {
-        display: inline-block;
-     }
+    display: flex;
+    flex-direction: row;
     .date {
         text-align: right;
         margin-right: $date_margin_right;
         width: $date_column_width;
     }
     .timeline-chunk-items {
-        width: calc(100% - #{$date_column_width} - #{$date_margin_right});
+       flex-grow: 1;
+       a p {
+         line-height: 1;
+         margin: 0;
+       }
     }
   }
 }

@@ -10,7 +10,7 @@ def index(request):
     learnings_by_day = {}
     today = timezone.now().date()
     for learning in learnings:
-        if learning.status is 'p' or request.user.has_perm('learned.change_learning'):
+        if learning.status is 'published' or request.user.has_perm('learned.change_learning'):
             date = learning.created_date.date()
             days_ago = abs((today - date).days)
             if days_ago not in learnings_by_day:

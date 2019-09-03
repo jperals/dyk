@@ -33,11 +33,11 @@ class Learning(models.Model):
     )
 
     STATUS_CHOICES = [
-        ('d', 'Draft'),
-        ('p', 'Published'),
-        ('w', 'Withdrawn'),
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+        ('withdrawn', 'Withdrawn'),
     ]
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='d')
+    status = models.CharField(max_length=9, choices=STATUS_CHOICES, default='draft')
 
     def __str__(self):
         # If the learning has a title, use it as excerpt in lists.

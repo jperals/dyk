@@ -4,7 +4,7 @@ from .models import Learning, Tag
 
 
 def make_published(modeladmin, request, queryset):
-    queryset.update(status='p')
+    queryset.update(status='published')
 make_published.short_description = "Mark selected stories as published"
 
 

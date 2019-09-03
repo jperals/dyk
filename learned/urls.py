@@ -20,7 +20,7 @@ class LearningSerializer(serializers.HyperlinkedModelSerializer):
     
 # ViewSets define the view behavior.
 class LearningViewSet(viewsets.ModelViewSet):
-    queryset = Learning.objects.all()
+    queryset = Learning.objects.filter(status='p')
     serializer_class = LearningSerializer
 
 # Routers provide an easy way of automatically determining the URL conf.

@@ -5,6 +5,10 @@
     line-height: 1.5;
 }
 
+.timeline-item.draft {
+    opacity: 0.5;
+}
+
 @media (max-width: $breakpoint_wide) {
   .timeline-chunk {
     .date {

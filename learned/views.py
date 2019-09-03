@@ -10,15 +10,16 @@ def index(request):
     learnings_by_day = {}
     today = timezone.now().date()
     for learning in learnings:
-        date = learning.created_date.date()
-        days_ago = abs((today - date).days)
-        if days_ago not in learnings_by_day:
-            learnings_by_day[days_ago] = {
-                'date': date,
-                'days_ago': days_ago,
-                'learnings': []
-            }
-        learnings_by_day[days_ago]['learnings'].append(learning)
+        if learning.status is 'p' or request.user.has_perm('learned.change_learning'):
+            date = learning.created_date.date()
+            days_ago = abs((today - date).days)
+            if days_ago not in learnings_by_day:
+                learnings_by_day[days_ago] = {
+                    'date': date,
+                    'days_ago': days_ago,
+                    'learnings': []
+                }
+            learnings_by_day[days_ago]['learnings'].append(learning)
     context = {
         'learnings': learnings_by_day,
         'meta': Learning._meta

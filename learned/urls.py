@@ -16,7 +16,7 @@ class LearningSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Learning
-        fields = ['id', 'learning_title', 'learning_text', 'created_date', 'modified_date', 'tags', '__str__']
+        fields = ['id', 'learning_title', 'learning_text', 'created_date', 'modified_date', 'tags', '__str__', 'status']
     
 # ViewSets define the view behavior.
 class LearningViewSet(viewsets.ModelViewSet):

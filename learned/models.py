@@ -2,8 +2,7 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils import timezone
 
-maxShortTitleLength = 80
-
+MAX_SHORT_TITLE_LENGTH = 80
 
 class Tag(models.Model):
     name = models.CharField(max_length=30)
@@ -33,6 +32,13 @@ class Learning(models.Model):
         blank=True,
     )
 
+    STATUS_CHOICES = [
+        ('d', 'Draft'),
+        ('p', 'Published'),
+        ('w', 'Withdrawn'),
+    ]
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='d')
+
     def __str__(self):
         # If the learning has a title, use it as excerpt in lists.
         # Otherwise, use a fragment from the content instead.
@@ -42,8 +48,8 @@ class Learning(models.Model):
         if length is 0:
             title = self.learning_text
             length = len(title)
-        if length > maxShortTitleLength + 1:
-            title = title[:maxShortTitleLength] + '…'
+        if length > MAX_SHORT_TITLE_LENGTH + 1:
+            title = title[:MAX_SHORT_TITLE_LENGTH] + '…'
         return title
 
 

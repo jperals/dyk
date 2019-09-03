@@ -15,7 +15,7 @@
             <div class="date learning-date" title="{{ learnings_in_day.date }}">{{ learnings_in_day|days_since|capfirst }}</div>
             <ul class="timeline-chunk-items">
                 {% for learning in learnings_in_day.learnings %}
-                <li class="timeline-item learning">
+                <li class="timeline-item learning{% if learning.status != 'p' %} draft{% endif %}">
                     <a href="learning/{{ learning.id }}">
                         {{ learning.learning_title | markdown:"fenced-code-blocks" }}
                     </a>
